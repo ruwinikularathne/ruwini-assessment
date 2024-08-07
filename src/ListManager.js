@@ -15,8 +15,11 @@ const ListManager = () => {
       setError('Please enter an item.');
       return;
     }
-    setItems([...items, inputValue]);
+    setItems([...items, { value: inputValue, animate: true }]);
     setInputValue('');
+    setTimeout(() => {
+      setItems(items => items.map(item => ({ ...item, animate: false })));
+    }, 200); // Remove animation class after 200ms
   };
 
   const handleRemoveItem = (index) => {
@@ -36,9 +39,9 @@ const ListManager = () => {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <ul>
         {items.map((item, index) => (
-          <li key={index}>
-            <span>{item}</span> {/* Text will naturally align to the left */}
-            <button onClick={() => handleRemoveItem(index)}>X</button> {/* Button will align to the right */}
+          <li key={index} className={item.animate ? "animate-item" : ""}>
+            <span>{item.value}</span>
+            <button onClick={() => handleRemoveItem(index)}>X</button>
           </li>
         ))}
       </ul>
