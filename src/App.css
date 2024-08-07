@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(1,1,1);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,10 +25,17 @@ button {
   margin: 10px;
   border-radius: 5px;
   border: none;
-  background-color: #61dafb;
+  background-color: #7234ee; /* Adjusted color */
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for color and transform */
 }
+
+button:hover {
+  background-color: #5a1dec; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
 
 ul {
   list-style-type: none;
@@ -36,9 +43,28 @@ ul {
 }
 
 li {
-  background: #61dafb;
-  padding: 10px;
-  margin: 5px 0;
+  background: #7234ee; /* Adjusted color */
+  padding: 8px 16px; /* Smaller padding */
+  margin: 8px 0; /* Smaller margin */
   color: white;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem; /* Smaller font size */
+  transition: transform 0.2s ease; /* Animation on add */
 }
+
+
+li button {
+  background-color: rgb(1,1,1); /* Red background for the button */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+li.animate-item {
+  transform: scale(1.05);
+}
+
