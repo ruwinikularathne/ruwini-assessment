@@ -19,7 +19,7 @@ const ListManager = () => {
     setInputValue('');
     setTimeout(() => {
       setItems(items => items.map(item => ({ ...item, animate: false })));
-    }, 200); // Remove animation class after 200ms
+    }, 200); 
   };
 
   const handleRemoveItem = (index) => {
@@ -36,7 +36,6 @@ const ListManager = () => {
         placeholder="Enter an item"
       />
       <button onClick={handleAddItem}>Add</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
       <ul>
         {items.map((item, index) => (
           <li key={index} className={item.animate ? "animate-item" : ""}>
