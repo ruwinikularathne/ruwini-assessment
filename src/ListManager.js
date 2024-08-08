@@ -13,7 +13,7 @@ const ListManager = () => {
   const handleAddItem = () => {
     if (inputValue.trim() === '') {
       setError('Please enter an item.');
-      return;
+      return; 
     }
     setItems([...items, { value: inputValue, animate: true }]);
     setInputValue('');
