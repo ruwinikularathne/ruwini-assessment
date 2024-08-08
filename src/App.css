@@ -87,3 +87,44 @@ li.animate-item {
     transform: scale(1);
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+  ul {
+    grid-template-columns: 1fr; 
+  }
+  li {
+    padding: 8px 10px; 
+    margin: 4px 0; 
+    font-size: 0.8rem; 
+  }
+  input, button {
+    padding: 8px 10px; 
+  }
+  button, li button {
+    padding: 8px; 
+    font-size: 0.8rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  input, button {
+    padding: 12px 15px; 
+    margin: 10px 5px; 
+  }
+  button:hover {
+    transform: scale(1); 
+  }
+  .App-header {
+    padding: 10px; 
+    justify-content: flex-start;
+  }
+  ul {
+    gap: 5px; 
+  }
+}
