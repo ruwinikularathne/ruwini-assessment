@@ -13,13 +13,13 @@ const ListManager = () => {
   const handleAddItem = () => {
     if (inputValue.trim() === '') {
       setError('Please enter an item.');
-      return; 
+      return;
     }
     setItems([...items, { value: inputValue, animate: true }]);
     setInputValue('');
     setTimeout(() => {
       setItems(items => items.map(item => ({ ...item, animate: false })));
-    }, 200); 
+    }, 200);
   };
 
   const handleRemoveItem = (index) => {
@@ -36,6 +36,7 @@ const ListManager = () => {
         placeholder="Enter an item"
       />
       <button onClick={handleAddItem}>Add</button>
+      {error && <div className="error-message">{error}</div>}
       <ul>
         {items.map((item, index) => (
           <li key={index} className={item.animate ? "animate-item" : ""}>
