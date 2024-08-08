@@ -16,45 +16,51 @@
 input {
   padding: 10px;
   margin: 10px;
-  border-radius: 5px;
+  border-radius: 30px;
   border: 1px solid #ccc;
 }
 
 button {
   padding: 10px 20px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: none;
   background-color: #7234ee; /* Adjusted color */
   color: white;
   cursor: pointer;
+  font-weight: bold;
   transition: background-color 0.3s, transform 0.2s; /* Smooth transition for color and transform */
 }
 
 button:hover {
-  background-color: #5a1dec; /* Darker shade on hover */
+  background-color: #b30f0f; /* Darker shade on hover */
   transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
 
 ul {
-  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
+  gap: 10px 20px; /* Adds space between grid items */
+  list-style-type: none; /* Removes default list styling */
   padding: 0;
 }
+
 
 li {
   background: #7234ee; /* Adjusted color */
   padding: 8px 16px; /* Smaller padding */
   margin: 8px 0; /* Smaller margin */
   color: white;
-  border-radius: 20px;
+  border-radius: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem; /* Smaller font size */
   transition: transform 0.2s ease; /* Animation on add */
+  height: 30px;
+  font-weight: bold;
 }
-
 
 li button {
   background-color: rgb(1,1,1); /* Red background for the button */
@@ -64,6 +70,7 @@ li button {
   border-radius: 20px;
   cursor: pointer;
 }
+
 li.animate-item {
   transform: scale(1.05);
 }
